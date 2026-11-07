@@ -8,7 +8,6 @@ from tempfile import TemporaryDirectory
 sys.path.insert(0, str(Path(__file__).parent))
 
 from main import init_database, query_matches, query_news
-from socials import DEFAULT_SOCIALS, format_followers
 
 
 class ApiDatabaseTests(unittest.TestCase):
@@ -58,17 +57,6 @@ class ApiDatabaseTests(unittest.TestCase):
         self.assertEqual(matches[0]["teamBName"], "Team B")
         self.assertEqual(matches[0]["date"], "22/09 21h")
         self.assertEqual(matches[0]["jeu"], "Valorant")
-
-    def test_format_followers(self) -> None:
-        self.assertEqual(format_followers(12_000, "abonnés"), "12 k abonnés")
-        self.assertEqual(format_followers(2_243, "abonnés"), "2,2 k abonnés")
-        self.assertEqual(format_followers(325, "membres"), "325 membres")
-        self.assertEqual(format_followers(1_500_000, "abonnés"), "1,5 M abonnés")
-
-    def test_default_socials_structure(self) -> None:
-        for platform in ("instagram", "twitch", "youtube", "twitter", "tiktok", "discord"):
-            self.assertIn(platform, DEFAULT_SOCIALS)
-            self.assertIn("formatted", DEFAULT_SOCIALS[platform])
 
 
 if __name__ == "__main__":

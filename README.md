@@ -9,12 +9,12 @@ Le site propose plusieurs pages dédiées à la structure :
 - accueil avec actualités et prochains matchs ;
 - présentation de l'équipe et de son identité visuelle ;
 - page roster (avec annonce d'arrivée prochaine) ;
-- réseaux sociaux (avec compteurs de membres/abonnés en temps réel) et boutique ;
+- réseaux sociaux et boutique ;
 - formulaire de contact relié directement à Discord.
 
 L'interface est responsive et intègre des données de secours permettant au site de rester 100 % fonctionnel (et prévisualisable sur GitHub Pages) lorsque l'API n'est pas joignable.
 
-## Architecture (Option 1 — 2 services Python indépendants)
+## Architecture
 
 ```text
 Team-sens/
@@ -22,7 +22,6 @@ Team-sens/
 ├── backend/
 │   ├── api/
 │   │   ├── main.py          # Service 1 : API HTTP Python avec FastAPI
-│   │   ├── socials.py       # Récupération asynchrone des statistiques réseaux
 │   │   └── Dockerfile       # Conteneurisation de l'API
 │   ├── bot/
 │   │   ├── bot.py           # Service 2 : Bot Discord et commandes slash
@@ -46,7 +45,6 @@ L'API Python utilise **FastAPI**, **Uvicorn** et **SQLite (mode WAL)**. Elle fon
 | `GET` | `/api/health` | Vérifier l'état de santé de l'API |
 | `GET` | `/api/news` | Récupérer les dernières actualités |
 | `GET` | `/api/matches` | Récupérer les prochains matchs |
-| `GET` | `/api/socials` | Récupérer les compteurs d'abonnés (Discord, Twitch, TikTok, X, YouTube) |
 | `POST` | `/api/contact` | Envoyer un message privé Discord aux administrateurs |
 
 ### Service 2 : Bot Discord (`discord.py`)
@@ -62,15 +60,15 @@ Les données sont stockées dans une base SQLite partagée (`teamsens.db` en mod
 
 ## Technologies
 
-- **Frontend** : Astro 5, HTML5, CSS3, JavaScript ;
-- **Backend API** : Python, FastAPI, Uvicorn, aiohttp, SQLite (WAL) ;
+- **Frontend** : Astro, HTML, CSS, JavaScript ;
+- **Backend API** : Python, FastAPI, Uvicorn, aiohttp, SQLite ;
 - **Bot Discord** : Python, `discord.py`, `python-dotenv` ;
 - **Infrastructure & CI/CD** : Docker Compose, GitHub Actions et GitHub Pages ;
 - **Design** : Figma pour la conception de la maquette.
 
 ## Lancer le projet en local
 
-### 1. Afficher le site (Astro)
+### 1. Afficher le site
 
 Depuis le dossier `site` :
 

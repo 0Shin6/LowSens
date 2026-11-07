@@ -216,37 +216,4 @@ import Layout from '../layouts/Layout.astro';
             </a>
         </div>
     </section>
-
-    <script>
-        async function loadSocialStats() {
-            const cards = document.querySelectorAll<HTMLElement>(".social-card[data-platform]");
-            if (!cards || cards.length === 0) return;
-
-            let stats: Record<string, { formatted?: string }> | null = null;
-
-            for (const url of ["/api/socials", "http://127.0.0.1:3000/api/socials", "data/social_stats.json"]) {
-                try {
-                    const res = await fetch(url, { cache: "no-store" });
-                    if (res.ok) {
-                        stats = await res.json();
-                        break;
-                    }
-                } catch (_) {}
-            }
-
-            if (!stats) return;
-
-            cards.forEach((card) => {
-                const platform = card.dataset.platform;
-                if (platform && stats && stats[platform] && stats[platform].formatted) {
-                    const badgeCount = card.querySelector(".badge-count");
-                    if (badgeCount) {
-                        badgeCount.textContent = stats[platform].formatted!;
-                    }
-                }
-            });
-        }
-
-        loadSocialStats();
-    </script>
 </Layout>

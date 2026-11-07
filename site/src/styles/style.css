@@ -1271,6 +1271,67 @@ body.light-theme {
     color: #222;
 }
 
+body.light-theme.home-page {
+    background: #feedff;
+    color: #25002f;
+}
+
+body.light-theme.home-page .navbar.nav-pill,
+body.light-theme.home-page .theme-toggle-btn {
+    background: rgba(255, 215, 251, 0.82);
+    border-color: rgba(255, 127, 244, 0.18);
+    box-shadow: 0 8px 24px rgba(238, 92, 238, 0.32);
+    color: #25002f;
+}
+
+body.light-theme.home-page .navbar nav a {
+    color: #25002f;
+}
+
+body.light-theme.home-page .navbar nav a:hover {
+    text-shadow: 0 0 10px rgba(202, 44, 211, 0.45);
+}
+
+body.light-theme.home-page .hero h1 {
+    color: #25002f;
+    text-shadow: 0 0 10px rgba(224, 67, 230, 0.3), 0 0 24px rgba(255, 150, 247, 0.55);
+}
+
+body.light-theme.home-page .widget {
+    background: rgba(255, 228, 255, 0.72);
+    border-color: rgba(255, 137, 244, 0.25);
+    box-shadow: 0 12px 25px rgba(238, 92, 238, 0.34);
+}
+
+body.light-theme.home-page .widget h2,
+body.light-theme.home-page .widget.news .slider-content p,
+body.light-theme.home-page .widget .game-type,
+body.light-theme.home-page .match-details,
+body.light-theme.home-page .result-info .team-name {
+    color: #25002f;
+}
+
+body.light-theme.home-page .home-page .dot,
+body.light-theme.home-page .dot {
+    background: rgba(130, 24, 143, 0.25);
+}
+
+body.light-theme.home-page .dot.active {
+    background: #d900c8;
+    box-shadow: 0 0 8px rgba(217, 0, 200, 0.65);
+}
+
+body.light-theme.home-page .result-info .score {
+    color: #009b18;
+    text-shadow: 0 0 15px rgba(0, 155, 24, 0.28);
+}
+
+body.light-theme.home-page footer {
+    background: rgba(255, 215, 251, 0.7);
+    color: rgba(37, 0, 47, 0.65);
+    box-shadow: none;
+}
+
 body.light-theme .navbar,
 body.light-theme .theme-toggle-btn {
     background: rgba(255, 255, 255, 0.7);

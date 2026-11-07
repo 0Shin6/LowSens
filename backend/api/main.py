@@ -1,5 +1,4 @@
 from __future__ import annotations
-import asyncio
 from contextlib import asynccontextmanager
 import os
 from pathlib import Path
@@ -11,11 +10,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-
-try:
-    from .socials import DEFAULT_SOCIALS, fetch_all_socials, save_stats_to_file
-except ImportError:
-    from socials import DEFAULT_SOCIALS, fetch_all_socials, save_stats_to_file
 
 env_path = Path(__file__).resolve().parents[1] / ".env"
 load_dotenv(dotenv_path=env_path)
@@ -179,30 +173,10 @@ async def send_discord_dm(session: aiohttp.ClientSession, token: str, recipient_
             raise RuntimeError(f"Envoi DM échoué: {msg_resp.status} - {body}")
 
 
-socials_cache: dict[str, Any] = dict(DEFAULT_SOCIALS)
-
-
-async def refresh_socials_loop() -> None:
-    global socials_cache
-    static_json_path = Path(__file__).resolve().parents[2] / "site" / "public" / "data" / "social_stats.json"
-    while True:
-        try:
-            updated = await fetch_all_socials()
-            socials_cache = updated
-            save_stats_to_file(updated, static_json_path)
-        except Exception:
-            pass
-        await asyncio.sleep(3600)
-
-
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     init_database()
-    task = asyncio.create_task(refresh_socials_loop())
-    try:
-        yield
-    finally:
-        task.cancel()
+    yield
 
 
 app = FastAPI(title="LowSens API", lifespan=lifespan)
@@ -251,11 +225,6 @@ async def get_matches() -> list[dict[str, Any]]:
         return query_matches(conn)
     finally:
         conn.close()
-
-
-@app.get("/api/socials")
-async def get_socials() -> dict[str, Any]:
-    return socials_cache
 
 
 @app.post("/api/contact")
