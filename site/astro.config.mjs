@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  site: 'https://0shin6.github.io',
+  base: '/Team-sens',
   build: {
     format: 'file'
   },
