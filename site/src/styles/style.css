@@ -1380,49 +1380,57 @@ body.light-theme .player-number {
 }
 
 body.light-theme .social-card {
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 25px rgba(121, 4, 255, 0.18);
-    color: #111;
+    background: rgba(255, 228, 255, 0.75);
+    border: 1px solid rgba(255, 137, 244, 0.25);
+    box-shadow: 0 12px 28px rgba(238, 92, 238, 0.36);
+    color: #29002c;
+}
+
+body.light-theme .social-card:hover {
+    box-shadow: 0 14px 32px rgba(238, 92, 238, 0.5);
 }
 
 body.light-theme .social-card-title {
-    color: #110026;
+    color: #29002c;
 }
 
 body.light-theme .social-card-desc {
-    color: rgba(20, 0, 40, 0.7);
+    color: rgba(41, 0, 44, 0.7);
 }
 
 body.light-theme .social-card-icon {
-    background: rgba(0, 0, 0, 0.06);
-    color: #110026;
+    background: rgba(41, 0, 44, 0.07);
+    color: #29002c;
 }
 
 body.light-theme .social-badge {
-    background: rgba(0, 0, 0, 0.06);
-    color: rgba(20, 0, 40, 0.8);
+    background: rgba(41, 0, 44, 0.07);
+    color: #29002c;
 }
 
 body.light-theme .social-handle {
-    color: rgba(20, 0, 40, 0.55);
+    color: rgba(41, 0, 44, 0.6);
 }
 
 body.light-theme .btn-follow {
-    background: rgba(0, 0, 0, 0.06);
-    border-color: rgba(0, 0, 0, 0.12);
-    color: #110026;
+    background: rgba(41, 0, 44, 0.07);
+    border-color: rgba(41, 0, 44, 0.08);
+    color: #29002c;
 }
 
 body.light-theme .btn-follow svg {
-    stroke: #110026;
+    stroke: #29002c;
 }
 
 body.light-theme .social-card:hover .btn-follow,
 body.light-theme .btn-follow:hover {
-    color: #0F0020;
+    color: #feedff;
     border-color: transparent;
-    box-shadow: 0 4px 14px rgba(121, 4, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(217, 0, 200, 0.45);
+}
+
+body.light-theme .btn-follow::before {
+    background: linear-gradient(90deg, #F374FF 0%, #C400C8 100%);
 }
 
 body.light-theme .social-card:hover .btn-follow::before,
@@ -1432,16 +1440,43 @@ body.light-theme .btn-follow:hover::before {
 
 body.light-theme .social-card:hover .btn-follow svg,
 body.light-theme .btn-follow:hover svg {
-    stroke: #0F0020;
+    stroke: #feedff;
 }
 
-body.light-theme .reseaux-page .hero h1 {
-    color: #110026;
-    text-shadow: 0 0 15px rgba(180, 80, 255, 0.4);
+body.light-theme.reseaux-page {
+    background: #feedff;
+    color: #29002c;
+}
+
+body.light-theme.reseaux-page .navbar.nav-pill,
+body.light-theme.reseaux-page .theme-toggle-btn {
+    background: rgba(254, 203, 255, 0.65);
+    border-color: rgba(255, 127, 244, 0.2);
+    box-shadow: 0 8px 24px rgba(238, 92, 238, 0.35);
+    color: #29002c;
+}
+
+body.light-theme.reseaux-page .navbar nav a {
+    color: #29002c;
+}
+
+body.light-theme.reseaux-page .navbar nav a:hover {
+    text-shadow: 0 0 10px rgba(202, 44, 211, 0.45);
+}
+
+body.light-theme.reseaux-page footer {
+    background: rgba(254, 203, 255, 0.45);
+    color: rgba(41, 0, 44, 0.7);
+    box-shadow: none;
+}
+
+body.light-theme.reseaux-page .hero h1 {
+    color: #29002c;
+    text-shadow: 0 0 12px rgba(224, 67, 230, 0.35), 0 0 26px rgba(255, 150, 247, 0.65);
 }
 
 body.light-theme .reseaux-hero .subtitle {
-    color: rgba(20, 0, 40, 0.75);
+    color: rgba(41, 0, 44, 0.7);
 }
 
 body.light-theme .roster-page .hero h1 {

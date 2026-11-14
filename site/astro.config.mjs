@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://0shin6.github.io',
-  base: '/Team-sens',
+  base: process.env.ASTRO_BASE || '/',
   build: {
     format: 'file'
   },
