@@ -1503,6 +1503,87 @@ body.light-theme .roster-card-desc strong {
     color: #110026;
 }
 
+body.light-theme.shop-page {
+    background: #feedff;
+    color: #29002c;
+}
+
+body.light-theme.shop-page .navbar.nav-pill,
+body.light-theme.shop-page .theme-toggle-btn {
+    background: rgba(254, 203, 255, 0.6);
+    border-color: rgba(255, 127, 244, 0.2);
+    box-shadow: 0 8px 24px rgba(238, 92, 238, 0.35);
+    color: #29002c;
+}
+
+body.light-theme.shop-page .navbar nav a {
+    color: #29002c;
+}
+
+body.light-theme.shop-page .navbar nav a:hover {
+    text-shadow: 0 0 10px rgba(202, 44, 211, 0.45);
+}
+
+body.light-theme.shop-page footer {
+    background: rgba(254, 203, 255, 0.45);
+    color: rgba(41, 0, 44, 0.7);
+    box-shadow: none;
+}
+
+body.light-theme.shop-page .hero h1 {
+    color: #29002c;
+    text-shadow: 0 0 12px rgba(224, 67, 230, 0.35), 0 0 26px rgba(255, 150, 247, 0.65);
+}
+
+body.light-theme.shop-page .hero .subtitle {
+    color: rgba(41, 0, 44, 0.75);
+}
+
+body.light-theme.shop-page .hero .subtitle strong {
+    color: #29002c;
+}
+
+body.light-theme.shop-page .hero .small-print {
+    color: rgba(41, 0, 44, 0.7);
+}
+
+body.light-theme.shop-page .product-card {
+    background: rgba(255, 228, 255, 0.75);
+    border: 1px solid rgba(255, 137, 244, 0.25);
+    box-shadow: 0 12px 28px rgba(238, 92, 238, 0.36);
+    color: #29002c;
+}
+
+body.light-theme.shop-page .product-card:hover {
+    box-shadow: 0 16px 36px rgba(238, 92, 238, 0.5);
+}
+
+body.light-theme.shop-page .product-card .product-name {
+    color: #29002c;
+}
+
+body.light-theme.shop-page .product-card .product-desc {
+    color: rgba(41, 0, 44, 0.7);
+}
+
+body.light-theme.shop-page .product-card .product-price {
+    color: #29002c;
+}
+
+body.light-theme.shop-page .product-card .btn-buy {
+    background: linear-gradient(90deg, #F374FF 0%, #C400C8 100%);
+    background-size: 100% 100%;
+    color: #feedff;
+    box-shadow: 0 4px 16px rgba(217, 0, 200, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+body.light-theme.shop-page .product-card .btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 0, 200, 0.6);
+    opacity: 0.95;
+}
+
 body.light-theme .roster-badge-icon {
     background: rgba(0, 0, 0, 0.05);
     border-color: rgba(0, 0, 0, 0.1);
