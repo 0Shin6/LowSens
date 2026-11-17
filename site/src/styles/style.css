@@ -80,8 +80,27 @@ body.light-theme .theme-toggle-btn .moon-icon {
     display: block;
 }
 
+.logo {
+    display: inline-flex;
+    align-items: center;
+}
+
 .logo img {
     height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo .logo-dark {
+    display: none;
+}
+
+body.light-theme .logo .logo-white {
+    display: none;
+}
+
+body.light-theme .logo .logo-dark {
+    display: block;
 }
  
 .navbar nav ul {
