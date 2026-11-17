@@ -1140,9 +1140,17 @@ footer {
 }
 
 /* ======== STYLES DE LA PAGE CONTACT ======== */
+.contact-page .hero h1 {
+  font-size: 44px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(180, 80, 255, 0.8), 0 0 50px rgba(121, 4, 255, 0.6);
+}
+
 .contact-form {
   width: 100%;
-  max-width: 960px;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1150,7 +1158,7 @@ footer {
 }
 
 .glass-form-container {
-  padding: 30px 20px;
+  padding: 50px 40px;
   width: 100%;
   
   display: flex;
@@ -1554,10 +1562,6 @@ body.light-theme.shop-page .product-card {
     color: #29002c;
 }
 
-body.light-theme.shop-page .product-card:hover {
-    box-shadow: 0 16px 36px rgba(238, 92, 238, 0.5);
-}
-
 body.light-theme.shop-page .product-card .product-name {
     color: #29002c;
 }
@@ -1571,17 +1575,16 @@ body.light-theme.shop-page .product-card .product-price {
 }
 
 body.light-theme.shop-page .product-card .btn-buy {
-    background: linear-gradient(90deg, #F374FF 0%, #C400C8 100%);
-    background-size: 100% 100%;
+    background: linear-gradient(100deg, #F374FF 0%, #C400C8 50%, #C400C8 50%, #F374FF 100%);
+    background-size: 200% 100%;
+    background-position: left center;
     color: #feedff;
     box-shadow: 0 4px 16px rgba(217, 0, 200, 0.45);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    transition: background-position 0.35s ease;
 }
 
 body.light-theme.shop-page .product-card .btn-buy:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(217, 0, 200, 0.6);
-    opacity: 0.95;
+    background-position: right center;
 }
 
 body.light-theme .roster-badge-icon {
@@ -1590,3 +1593,106 @@ body.light-theme .roster-badge-icon {
     color: #7540ed;
     box-shadow: 0 0 20px rgba(121, 4, 255, 0.2);
 }
+
+/* ======== CONTACT PAGE LIGHT THEME (FIGMA) ======== */
+body.light-theme.contact-page {
+    background: #feedff;
+    color: #29002c;
+}
+
+body.light-theme.contact-page .navbar.nav-pill,
+body.light-theme.contact-page .theme-toggle-btn {
+    background: rgba(254, 203, 255, 0.6);
+    border-color: rgba(255, 127, 244, 0.2);
+    box-shadow: 0 8px 24px rgba(238, 92, 238, 0.35);
+    color: #29002c;
+}
+
+body.light-theme.contact-page .navbar nav a {
+    color: #29002c;
+}
+
+body.light-theme.contact-page .navbar nav a:hover {
+    text-shadow: 0 0 10px rgba(202, 44, 211, 0.45);
+}
+
+body.light-theme.contact-page footer {
+    background: rgba(254, 203, 255, 0.5);
+    color: rgba(41, 0, 44, 0.7);
+    box-shadow: none;
+}
+
+body.light-theme.contact-page .hero h1 {
+    color: #29002c;
+    text-shadow: 0 0 15px rgba(251, 4, 255, 0.8), 0 0 30px rgba(251, 4, 255, 0.45);
+}
+
+body.light-theme.contact-page .glass-form-container {
+    background: rgba(254, 203, 255, 0.6);
+    border: 1px solid rgba(255, 127, 244, 0.15);
+    border-radius: 40px;
+    box-shadow: 0 10px 25px rgba(251, 4, 255, 0.45);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+body.light-theme.contact-page .input-field {
+    background-color: #c796c7;
+    color: #fde3ff;
+    caret-color: #fde3ff;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+
+body.light-theme.contact-page .input-field:focus {
+    box-shadow: 0 0 0 2px rgba(243, 116, 255, 0.8);
+}
+
+body.light-theme.contact-page .input-field::placeholder {
+    color: #fde3ff;
+    opacity: 1;
+    font-weight: 500;
+}
+
+body.light-theme.contact-page .textarea-field {
+    background-color: #c796c7;
+    color: #fde3ff;
+    caret-color: #fde3ff;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+
+body.light-theme.contact-page .textarea-field:focus {
+    box-shadow: 0 0 0 2px rgba(243, 116, 255, 0.8);
+}
+
+body.light-theme.contact-page .textarea-field::placeholder {
+    color: #fde3ff;
+    opacity: 1;
+    font-weight: 500;
+}
+
+body.light-theme.contact-page .btn-send {
+    margin-top: 24px;
+    padding: 10px 58px;
+    border-radius: 50px;
+    background: linear-gradient(100deg, #F374FF 0%, #C400C8 50%, #C400C8 50%, #F374FF 100%);
+    background-size: 200% 100%;
+    background-position: left center;
+    color: #feedff;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(217, 0, 200, 0.45);
+    border: none;
+    cursor: pointer;
+    transition: background-position 0.35s ease;
+}
+
+body.light-theme.contact-page .btn-send:hover {
+    background-position: right center;
+}
+
+body.light-theme.contact-page .little-comment {
+    color: rgba(41, 0, 44, 0.7);
+}
+
