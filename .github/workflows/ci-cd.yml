@@ -18,6 +18,8 @@ jobs:
           node-version: '20'
       - run: npm install && npm run build
         working-directory: site
+        env:
+          ASTRO_BASE: /Team-sens
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
@@ -38,9 +40,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - uses: actions/configure-pages@v5
       - run: npm install && npm run build
         working-directory: site
-      - uses: actions/configure-pages@v5
+        env:
+          ASTRO_BASE: /Team-sens
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
